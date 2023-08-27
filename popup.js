@@ -147,8 +147,8 @@ submitButton.addEventListener("click", () => {
       input += "in monkey terms: ";
     }
   }
-  // Get the message from the input field
   const message = input + queryInput.value;
+  // Get the message from the input field
   // Send the query to the background script
   chrome.runtime.sendMessage({ input: message });
   // Clear the answer
