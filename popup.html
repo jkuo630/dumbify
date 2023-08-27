@@ -29,107 +29,112 @@
   </head>
 
   <body>
-    <div>
-      <h2>Dumbify.</h2>
-      <br />
-      <div class="function-picker">
-        <div class="form-check">
-          <input
-            id="definition"
-            name="paymentMethod"
-            type="radio"
-            class="form-check-input"
-            checked=""
-            required=""
-            value="definition"
-          />
-          <label class="form-check-label" for="credit">Definition</label>
-        </div>
-        <div class="form-check">
-          <input
-            id="simplify"
-            name="paymentMethod"
-            type="radio"
-            class="form-check-input"
-            value="simplify"
-            required=""
-          />
-          <label class="form-check-label" for="debit">Simplify</label>
-        </div>
-      </div>
-      <br />
-      <div class="slider">
-        <input
-          type="range"
-          min="0"
-          max="30"
-          class="slider"
-          id="myRange"
-          step="15"
-        />
-      </div>
-      <datalist id="tickmarks">
-        <option value="0" label="Simple"></option>
-        <option value="10"></option>
-        <option value="20"></option>
-        <option value="30"></option>
-        <option value="40"></option>
-        <option value="50" label="Child"></option>
-        <option value="60"></option>
-        <option value="70"></option>
-        <option value="80"></option>
-        <option value="90"></option>
-        <option value="100" label="Monkey"></option>
-      </datalist>
-    </div>
-    <br />
-    <div class="input-container form-group">
-      <input
-        type="search"
-        id="query-input"
-        placeholder="Watch the magic happen..."
-      />
-      <button id="submit-button" class="btn" disabled>
-        <i class="fa fa-paper-plane"></i>
-      </button>
-    </div>
-
-    <div class="stage">
-      <div id="loading-indicator" class="dot-flashing"></div>
-    </div>
-
-    <div id="answerWrapper">
-      <div id="answer"></div>
-      <div class="copyRow">
-        <span id="timestamp"></span>
-        <button
-          id="copyAnswer"
-          class="btn copyButton"
-          title="Copy the Answer to the Clipboard"
-        >
-          <i class="fa fa-clipboard"></i>
-        </button>
-      </div>
-    </div>
-
-    <div id="show-hide-wrapper" class="show-hide-wrapper">
-      <span id="lastRequestsTitle" style="font-weight: bold"></span>
+    <div class="popup-container">
       <div>
-        <button id="clear-button" class="btn" title="Clear last conversations">
-          <i class="fa fa-trash"></i>
+        <h2>Dumbify.</h2>
+        <br />
+        <div class="function-picker">
+          <div class="form-check">
+            <input
+              id="definition"
+              name="paymentMethod"
+              type="radio"
+              class="form-check-input"
+              checked=""
+              required=""
+              value="definition"
+            />
+            <label class="form-check-label" for="credit">Definition</label>
+          </div>
+          <div class="form-check">
+            <input
+              id="simplify"
+              name="paymentMethod"
+              type="radio"
+              class="form-check-input"
+              value="simplify"
+              required=""
+            />
+            <label class="form-check-label" for="debit">Simplify</label>
+          </div>
+        </div>
+        <br />
+        <div class="slider">
+          <input
+            type="range"
+            min="0"
+            max="30"
+            class="slider"
+            id="myRange"
+            step="15"
+          />
+        </div>
+        <datalist id="tickmarks">
+          <option value="0" label="Simple"></option>
+          <option value="10"></option>
+          <option value="20"></option>
+          <option value="30"></option>
+          <option value="40"></option>
+          <option value="50" label="Child"></option>
+          <option value="60"></option>
+          <option value="70"></option>
+          <option value="80"></option>
+          <option value="90"></option>
+          <option value="100" label="Monkey"></option>
+        </datalist>
+      </div>
+      <br />
+      <div class="input-container form-group">
+        <input
+          type="search"
+          id="query-input"
+          placeholder="Watch the magic happen..."
+        />
+        <button id="submit-button" class="btn" disabled>
+          <i class="fa fa-paper-plane"></i>
         </button>
-        <button
-          id="show-hide-last-answer-button"
-          class="btn"
-          title="Toggle last conversations"
-        >
-          <i class="fa fa-eye"></i>
-        </button>
+      </div>
+
+      <div class="stage">
+        <div id="loading-indicator" class="dot-flashing"></div>
+      </div>
+
+      <div id="answerWrapper">
+        <div id="answer"></div>
+        <div class="copyRow">
+          <span id="timestamp"></span>
+          <button
+            id="copyAnswer"
+            class="btn copyButton"
+            title="Copy the Answer to the Clipboard"
+          >
+            <i class="fa fa-clipboard"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="show-hide-wrapper" class="show-hide-wrapper">
+        <span id="lastRequestsTitle" style="font-weight: bold"></span>
+        <div>
+          <button
+            id="clear-button"
+            class="btn"
+            title="Clear last conversations"
+          >
+            <i class="fa fa-trash"></i>
+          </button>
+          <button
+            id="show-hide-last-answer-button"
+            class="btn"
+            title="Toggle last conversations"
+          >
+            <i class="fa fa-eye"></i>
+          </button>
+        </div>
       </div>
     </div>
 
     <div id="queriesAnswersContainer"></div>
-
     <script src="popup.js"></script>
   </body>
 </html>

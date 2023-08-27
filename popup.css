@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0.5rem;
   background-color: #454545;
-  width: 320px;
+  width: 350px;
   font-size: small;
 }
 
@@ -263,7 +263,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* This will make the container take up the full viewport height */
 }
 
 #query-input::placeholder {

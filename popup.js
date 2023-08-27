@@ -138,8 +138,8 @@ submitButton.addEventListener("click", () => {
   const sliderValue = document.getElementById("myRange").value;
   // the logic to choose which message to send to the api based on user choices
   var input = functionPicker
-    ? "Give a short definition of the following term(s) with an example "
-    : "Simplify the following message ";
+    ? "Give a definition no longer than 2 sentences, of the following term(s)"
+    : "Simplify the following message in no longer than 2 sentences";
   if (!functionPicker2) {
     if (sliderValue == 0) {
       input += "in simple terms: ";
