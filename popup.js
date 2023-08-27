@@ -133,7 +133,7 @@ function displayQueriesAnswers() {
 // Listen for clicks on the submit button
 submitButton.addEventListener("click", () => {
   // Get the message from the input field
-  const message = queryInput.value;
+  let message = "add Jason to the start of the message" + queryInput.value;
   // Send the query to the background script
   chrome.runtime.sendMessage({ input: message });
   // Clear the answer

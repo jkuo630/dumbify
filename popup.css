@@ -243,3 +243,48 @@ p {
     background-color: rgba(196, 196, 198, 0.2);
   }
 }
+
+body {
+  background-color: #352f44 !important;
+  font-family: "Domine", serif !important;
+  color: white !important;
+  padding: 20px;
+  border-radius: 90%;
+}
+
+.text-field {
+  font-size: 5px;
+  padding-top: 10px !important;
+}
+
+.slidecontainer {
+  padding-top: 10px;
+}
+
+.function-picker {
+  font-size: 13px;
+}
+datalist {
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  width: 80%;
+}
+
+input {
+  padding-left: 0 !important;
+  width: 80%;
+}
+.slider {
+  padding-left: 10px;
+}
+.send {
+  margin-top: 5px;
+  margin-right: 5px;
+}
+button {
+  border-width: 0;
+  float: right;
+  background: none;
+}

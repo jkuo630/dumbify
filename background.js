@@ -42,7 +42,10 @@ chrome.runtime.onMessage.addListener(async function (request) {
     );
 
     // Add the user's message to the message array
-    messageArray.push({ role: "user", content: request.input });
+    messageArray.push({
+      role: "user",
+      content: request.input,
+    });
 
     try {
       // send the request containing the messages to the OpenAI API
