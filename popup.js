@@ -6,6 +6,7 @@ const queriesAnswersContainer = document.getElementById(
 );
 const showHideWrapper = document.getElementById("show-hide-wrapper");
 
+
 // send a message to the background script to reset the message array
 chrome.runtime.sendMessage({ openedPopup: true });
 // focus on the input field
@@ -78,9 +79,8 @@ function displayQueriesAnswers() {
           second: "2-digit",
         };
         const time = new Date().toLocaleString("en-US", options);
-        const timeStampElem = `<div class="timeStamp">${
-          timeStamp || time
-        }</div>`;
+        const timeStampElem = `<div class="timeStamp">${timeStamp || time
+          }</div>`;
         // Add query, answer, copy button, and remove button to the HTML element
         item.innerHTML = `
           <div style="color: rgb(188, 188, 188); margin-bottom: 0.2rem;">${query}</div>
@@ -132,8 +132,23 @@ function displayQueriesAnswers() {
 
 // Listen for clicks on the submit button
 submitButton.addEventListener("click", () => {
+  // gets the value of the form **MUST DO IT HERE OR ELSE THE VALUES WILL BE THE INITIAL ONES **
+  const functionPicker = document.getElementById("definition").checked;
+  const functionPicker2 = document.getElementById("simplify").checked;
+  const sliderValue = document.getElementById("myRange").value;
+  // the logic to choose which message to send to the api based on user choices
+  var input = functionPicker ? "Give a definition of the following term(s) with an example " : "Simplify the following message ";
+  if (!functionPicker2) {
+    if (sliderValue == 0) {
+      input += "in simple terms: ";
+    } else if (sliderValue == 15) {
+      input += "as if I was 8 years old: ";
+    } else {
+      input += "in monkey terms: ";
+    }
+  }
   // Get the message from the input field
-  const message = queryInput.value;
+  const message = input + queryInput.value;
   // Send the query to the background script
   chrome.runtime.sendMessage({ input: message });
   // Clear the answer
