@@ -6,7 +6,6 @@ const queriesAnswersContainer = document.getElementById(
 );
 const showHideWrapper = document.getElementById("show-hide-wrapper");
 
-
 // send a message to the background script to reset the message array
 chrome.runtime.sendMessage({ openedPopup: true });
 // focus on the input field
@@ -79,8 +78,9 @@ function displayQueriesAnswers() {
           second: "2-digit",
         };
         const time = new Date().toLocaleString("en-US", options);
-        const timeStampElem = `<div class="timeStamp">${timeStamp || time
-          }</div>`;
+        const timeStampElem = `<div class="timeStamp">${
+          timeStamp || time
+        }</div>`;
         // Add query, answer, copy button, and remove button to the HTML element
         item.innerHTML = `
           <div style="color: rgb(188, 188, 188); margin-bottom: 0.2rem;">${query}</div>
@@ -137,7 +137,9 @@ submitButton.addEventListener("click", () => {
   const functionPicker2 = document.getElementById("simplify").checked;
   const sliderValue = document.getElementById("myRange").value;
   // the logic to choose which message to send to the api based on user choices
-  var input = functionPicker ? "Give a definition of the following term(s) with an example " : "Simplify the following message ";
+  var input = functionPicker
+    ? "Give a short definition of the following term(s) with an example "
+    : "Simplify the following message ";
   if (!functionPicker2) {
     if (sliderValue == 0) {
       input += "in simple terms: ";

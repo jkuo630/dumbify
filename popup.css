@@ -10,6 +10,10 @@ p {
   margin: 0;
 }
 
+h2 {
+  text-align: center;
+}
+
 #query-input {
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -245,16 +249,25 @@ p {
 }
 
 body {
-  background-color: #352F44 !important;
-  font-family: "Domine", serif !important;
-  color: white !important;
+  background-color: #0c356a !important;
+  font-family: "Heebo", sans-serif;
+  color: #eeeeee !important;
   /* height: 300px;
   width: 200px; */
-  background-color: #352f44 !important;
-  font-family: "Domine", serif !important;
-  color: white !important;
   padding: 20px;
   border-radius: 90%;
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* This will make the container take up the full viewport height */
+}
+
+#query-input::placeholder {
+  font-size: small;
 }
 
 .text-field {
